@@ -1,0 +1,332 @@
+body {
+    // font-family: "Calligraffitti";
+    font-family: "Josefin Sans";
+    font-family: "Calligraffitti", sans-serif;
+    color: $gray-700;
+    -webkit-font-smoothing: antialiased;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    background: #efefef;
+}
+
+strong {
+    font-weight: normal;
+}
+
+/* clears the 'X' from Internet Explorer */
+input[type="search"]::-ms-clear {
+    display: none;
+    width: 0;
+    height: 0;
+}
+
+input[type="search"]::-ms-reveal {
+    display: none;
+    width: 0;
+    height: 0;
+}
+
+/* clears the 'X' from Chrome */
+input[type="search"]::-webkit-search-decoration,
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-results-button,
+input[type="search"]::-webkit-search-results-decoration {
+    display: none;
+}
+#page svg {
+    margin: 0px auto;
+    display: block;
+    width: 100% !important;
+    height: auto !important;
+}
+// work something for web too
+#home.app svg {
+    margin: 0px auto;
+    display: static;
+    width: 100% !important;
+    height: auto !important;
+}
+.btn-nav {
+    border: none;
+    .svg-container {
+        overflow: visible;
+        svg {
+            -webkit-filter: drop-shadow(0.15em 0.15em 0 rgba(0, 0, 0, 0.25));
+            filter: drop-shadow(0.15em 0.15em 0 rgba(0, 0, 0, 0.25));
+            /* Similar syntax to box-shadow */
+        }
+    }
+}
+.svg-container {
+    display: inline-block;
+    position: relative;
+    width: 100%;
+    padding-bottom: 100%;
+    /* aspect ratio */
+    vertical-align: top;
+    overflow: hidden;
+}
+
+.svg-content-responsive {
+    display: inline-block;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+svg {
+    .web-1 {
+        fill: #3d95aa;
+    }
+
+    .word-1 {
+        fill: #2b579a;
+    }
+
+    .word-2 {
+        fill: #fff;
+    }
+
+    .xls-1 {
+        fill: #1e6e42;
+    }
+
+    .tableau-1 {
+        fill: #e9772f;
+    }
+
+    .tableau-2 {
+        fill: #214982;
+    }
+
+    .tableau-3 {
+        fill: #cd2f44;
+    }
+
+    .tableau-4 {
+        fill: #efa24a;
+    }
+
+    .tableau-5 {
+        fill: #608c9f;
+    }
+
+    .tableau-6 {
+        fill: #6e789e;
+    }
+
+    .tableau-7 {
+        fill: #90b0ba;
+    }
+
+    .powerbi-1 {
+        fill: #f1c712;
+    }
+
+    .mag-1 {
+        fill: #303030;
+    }
+
+    .ppt-1 {
+        fill: #cd674f;
+    }
+}
+
+.fade-enter,
+.fade-exit {
+    position: absolute;
+    width: 100%;
+    top: 0;
+    left: 0;
+    transition: 0.6s ease opacity;
+    overflow: hidden;
+}
+.fade-enter,
+.fade-exit-active {
+    opacity: 0;
+}
+.fade-enter-active {
+    opacity: 1;
+    z-index: 1;
+}
+
+.animatable div {
+    height: 100px;
+}
+
+.animate-check {
+    display: flex;
+    font-size: 24px;
+    align-items: center;
+    justify-content: center;
+}
+.animate-check input {
+    height: 24px;
+    width: 24px;
+    margin-right: 8px;
+}
+
+.App {
+    font-family: sans-serif;
+    text-align: center;
+}
+a {
+    color: #999;
+    &:hover {
+        color: #000;
+        text-decoration: underline;
+    }
+}
+h1,
+h2,
+h3,
+h4,
+h5 {
+    font-family: "Fredericka the great", sans-serif;
+    text-shadow: 0.01em 0.03em 0 #e6e8ea, 0.04em 0.06em 0 #c9cfd4;
+    text-transform: uppercase;
+    color: #000;
+}
+p {
+    line-height: 1.5;
+}
+p.wk {
+    font-family: "Calligraffitti", sans-serif;
+    // font-family: "Coming soon", sans-serif;
+    font-weight: 300;
+    // letter-spacing: -0.05em;
+    font-size: 1.2em;
+    line-height: 1.4;
+    //   color: $gray-600;
+    margin: 1em 0 2.5em 0;
+}
+.belt {
+    content: "";
+    position: absolute;
+    width: 1px;
+    height: 100%;
+    left: 49.9%;
+    top: 0;
+    bottom: 0;
+    // border-left: 4px solid $gray-100;
+    padding-left: 4px;
+    background: url(/assets/bg-hatch2.gif) repeat $gray-100;
+    z-index: -1;
+    -webkit-transition: height 1s;
+    -moz-transition: height 1s;
+    -ms-transition: height 1s;
+    -o-transition: height 1s;
+    transition: height 1s;
+    opacity: 0.2;
+}
+
+.cent {
+    position: relative;
+    padding-top: 100px;
+
+    text-align: center;
+    text-justify: distribute;
+}
+.central {
+    position: relative;
+    font-size: 1.2em;
+    padding-top: 50px;
+    @include media-breakpoint-up(lg) {
+        width: 60%;
+        margin: 0 auto;
+    }
+
+    text-align: center;
+    text-justify: distribute;
+    h3 {
+        font-size: 2.2em;
+    }
+    .large {
+        line-height: 1;
+        font-family: "Calligraffitti", sans-serif;
+        // font-family: "Coming soon", sans-serif;
+        font-size: 1.15em;
+        // font-size: 1.03em;
+        margin: -0.3em 0 1.6em 0;
+        color: $gray-600;
+        letter-spacing: 0.05em;
+    }
+    a {
+        text-decoration: underline;
+        color: $gray-800;
+        &:hover {
+            text-decoration: none;
+            color: #000;
+        }
+    }
+    .read-more {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        text-align: center;
+        margin: 0;
+        padding: 30px 0;
+
+        /* "transparent" only works here because == rgba(0,0,0,0) */
+        background-image: linear-gradient(to bottom, transparent, #efefef);
+    }
+    p {
+        font-size: 1.1em;
+        margin: 0.5em 0 1em 0;
+        &.wk {
+            margin: 0.5em 6% 1em 6%;
+            font-size: 1.4em;
+        }
+    }
+}
+.job {
+    width: 55%;
+    margin: 0 auto;
+    margin-bottom: 100px;
+    p {
+        padding: 20px 0;
+        background: rgba(#efefef, 0.7);
+        font-family: "Calligraffitti", sans-serif;
+        // font-family: "Coming soon", sans-serif;
+    }
+    //   h3 {
+    //     font-size: 30px !important;
+    //   }
+}
+$i: 30;
+@for $c from 1 through $i {
+    $fs: ($i * 0.045);
+    @if ($c==1) {
+        $fs: $fs + 0.15;
+    }
+    .job-#{$c} {
+        font-size: #{$fs}em;
+        h3 {
+            font-size: #{$fs * 2}vw;
+            margin-bottom: -0.1em;
+        }
+        width: #{$fs * 50%};
+        @if ($c==1) {
+            margin-top: 80px;
+            // h3 {
+            //     font-size: 40px !important;
+            //   }
+        }
+    }
+    $i: $i - 2;
+}
+
+// progress::-moz-progress-bar, progress::-webkit-progress-value {
+//   background-image:
+// 	   -webkit-linear-gradient(-45deg,
+// 	                           transparent 33%, rgba(0, 0, 0, .1) 33%,
+// 	                           rgba(0,0, 0, .1) 66%, transparent 66%),
+// 	   -webkit-linear-gradient(top,
+// 	                           rgba(255, 255, 255, .25),
+// 	                           rgba(0, 0, 0, .25)),
+// 	   -webkit-linear-gradient(left, #09c, #f44);
+
+//     border-radius: 2px;
+//     background-size: 35px 20px, 100% 100%, 100% 100%;
+// }

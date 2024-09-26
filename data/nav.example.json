@@ -1,0 +1,26 @@
+{
+    "nav": {
+        "main": [
+            {
+                "title": " ",
+                "type": "home",
+                "link": "/",
+                "public": true
+            },
+            {
+                "title": " ",
+                "type": "about",
+                "link": "/about",
+                "anim": true,
+                "public": true
+            },
+            {
+                "title": " ",
+                "type": "close",
+                "link": "/logout",
+                "anim": true,
+                "public": false
+            }
+        ]
+    }
+}

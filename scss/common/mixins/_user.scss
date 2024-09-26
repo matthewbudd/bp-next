@@ -1,0 +1,21 @@
+@mixin user-img($ts) {
+    .user-image-wrap {
+        display: inline-block;
+        overflow: hidden;
+        position: relative;
+        width: $ts;
+        height: $ts;
+        border-radius: 50%;
+
+        .user-image-masked {
+            position: absolute;
+            left: 0px;
+            height: auto;
+            min-width: $ts;
+            min-height: $ts;
+            clip: rect(0px, $ts, $ts, 0px);
+            max-width: $ts;
+            border-radius: 0;
+        }
+    }
+}

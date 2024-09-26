@@ -1,0 +1,691 @@
+// @import "style.scss";
+
+#home {
+    z-index: 5;
+    height: 100%;
+    overflow: hidden;
+    .r {
+        position: absolute;
+        z-index: 3000;
+    }
+    font-size: 1.5rem;
+}
+#home.dark,
+#page.dark {
+    h2,
+    p {
+        color: #fff;
+    }
+    h1,
+    h2,
+    h3,
+    h4,
+    h5 {
+        color: #fff;
+        text-shadow: 0.01em 0.03em 0 #333, 0.04em 0.06em 0 #222;
+    }
+    background: #000;
+
+    .r .btn-nav svg {
+        path {
+            fill: #fff;
+        }
+    }
+    .job {
+        p {
+            background: rgba(0, 0, 0, 0.3);
+        }
+    }
+    .central {
+        a {
+            color: $gray-500;
+            &:hover {
+                color: #fff;
+            }
+        }
+        .read-more {
+            background-image: linear-gradient(to bottom, transparent, #000);
+        }
+        .large {
+            color: $gray-500;
+        }
+    }
+}
+
+#home.dark {
+    position: relative;
+}
+
+#home.dark:before {
+    content: " ";
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0.4;
+    background-repeat: repeat;
+    background-position: 50% 0;
+    // background-size: cover;
+    background-color: #222;
+}
+#home.app1 {
+    position: static;
+}
+
+#home.app1:before {
+    content: " ";
+    display: none;
+    background: none;
+}
+
+#page {
+    z-index: 5;
+    height: 100%;
+    overflow: hidden;
+
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    .r {
+        position: absolute;
+        z-index: 3000;
+        padding-top: 10px;
+        padding-bottom: 20px;
+    }
+    .inner {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        overflow-y: auto;
+        .r {
+            padding-top: 0;
+            padding-bottom: 0;
+        }
+    }
+}
+.col-card {
+    @for $i from 1 through 30 {
+        $rot: (random(3) - random(6)) + deg;
+        &:nth-of-type(#{$i}) {
+            transform: rotate($rot);
+        }
+    }
+    margin-bottom: 20px;
+}
+.row > div[class*="col-card"] {
+    display: flex;
+    flex: 1 0 auto;
+}
+.card {
+    // border: 1px solid #000;
+    border: 0;
+    position: relative;
+    background: rgba(255, 255, 255, 0.5);
+    // box-shadow: 0.1em 0.2em 0 #efefef;
+    border-radius: 0px;
+    font-family: Work Sans, sans-serif;
+    // font-weight:700;
+    &:after {
+        content: "";
+        // background: url(/assets/bg-hatch2.gif) repeat;
+
+        background: rgba(255, 255, 255, 0.5);
+        // opacity: 0.2;
+        top: 5px;
+        left: 5px;
+        bottom: -5px;
+        right: -5px;
+        position: absolute;
+        z-index: -1;
+        border-radius: 0px;
+    }
+    .card-text,
+    .card-title {
+        // background: rgba(#fff, 0.8);
+        padding: 10px;
+        margin-left: -5px;
+        margin-right: -5px;
+        margin-bottom: 0;
+        margin-top: 0;
+        color: #000;
+        // text-shadow: 1px 1px 0 #000;
+    }
+
+    .card-title {
+        // background: rgba(#fff, 0.8);
+        // border-bottom: 1px solid #fff;
+        text-transform: none;
+    }
+    .progress {
+        margin-left: -5px;
+        margin-right: -5px;
+        background: transparent;
+        border-radius: 0;
+        height: 4px;
+        .progress-bar {
+            background: #fff;
+        }
+    }
+    .btn {
+        margin-left: -5px;
+        margin-right: -5px;
+        margin-bottom: 0;
+        margin-top: 0;
+        // background: rgba(#fff, 0.8);
+        border: 0;
+        // border-bottom: 1px solid #fff;
+        border-radius: 0;
+        &:hover {
+            background: rgba(#fff, 1);
+        }
+    }
+}
+
+.inner {
+    z-index: 2;
+    height: 100%;
+    h1,
+    h2 {
+        font-family: Fredericka the Great;
+        font-weight: normal;
+        font-size: 2em;
+        padding: 0 0 0.4em 0;
+        letter-spacing: -0.03em;
+        text-shadow: 0.01em 0.03em 0 #e6e8ea, 0.04em 0.06em 0 #c9cfd4;
+        text-transform: uppercase;
+        color: #000;
+        -ms-transform: rotate(2deg);
+        /* IE 9 */
+        -webkit-transform: rotate(2deg);
+        /* Chrome, Safari, Opera */
+        transform: rotate(2deg);
+
+        @include media-breakpoint-up(lg) {
+            font-size: 3em;
+            padding: 0 0 0.3em 0;
+        }
+    }
+    .gallery-text {
+        padding-top: 30%;
+        position: static;
+        transform: translate(0%, 0%);
+        text-align: center;
+        p.large {
+            font-family: Calligraffitti;
+            font-weight: 300;
+            font-size: 1em;
+            padding: 0 0 0.4em 0em;
+            margin-top: -35px;
+            letter-spacing: 0.11em;
+            text-transform: lowercase;
+            color: #666;
+            /* color: #e0e0e0; */
+            -ms-transform: rotate(2deg);
+            /* IE 9 */
+            -webkit-transform: rotate(2deg);
+            /* Chrome, Safari, Opera */
+            transform: rotate(2deg);
+            @include media-breakpoint-up(lg) {
+                font-size: 1.35em;
+            }
+        }
+    }
+}
+
+.web .inner {
+    h1,
+    h2 {
+        -ms-transform: rotate(-2deg);
+        /* IE 9 */
+        -webkit-transform: rotate(-2deg);
+        /* Chrome, Safari, Opera */
+        transform: rotate(-2deg);
+    }
+    .gallery-text {
+        p.large {
+            -ms-transform: rotate(-2deg);
+            /* IE 9 */
+            -webkit-transform: rotate(-2deg);
+            /* Chrome, Safari, Opera */
+            transform: rotate(-2deg);
+        }
+    }
+}
+@import url("https://fonts.googleapis.com/css?family=Roboto");
+
+@mixin hexagon($size, $gutter, $color) {
+    position: relative;
+    width: $size;
+    height: ($size * 0.577);
+    background-color: $color;
+    margin: ($size * 0.288) 0;
+    margin-right: $gutter;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transform: scale(1);
+    transition: all 0.25s ease-in-out;
+    &:hover {
+        transform: scale(0.75);
+    }
+    &:before,
+    &:after {
+        content: "";
+        position: absolute;
+        width: 0;
+        left: 0;
+        border-left: calc($size/2) solid transparent;
+        border-right: calc($size/2) solid transparent;
+    }
+
+    &:before {
+        bottom: 100%;
+        border-bottom: ($size * 0.288) solid $color;
+    }
+
+    &:after {
+        top: 100%;
+        width: 0;
+        border-top: ($size * 0.288) solid $color;
+    }
+}
+
+$size: 8rem;
+$gutter: 0.25rem;
+
+.hex-row {
+    margin-top: calc(((#{$size} * 0.288) * -1 + #{$gutter}));
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    .hexagon {
+        @include hexagon($size, $gutter, white);
+    }
+}
+
+.hexx {
+    $width: 20em;
+    $height: 17.3em;
+
+    #hexGrid {
+        height: $height;
+        width: $width;
+    }
+    #hexGrid .hexCrop {
+        position: relative;
+        overflow: visible;
+    }
+    #hexGrid .hexGrid {
+        display: grid;
+        justify-items: auto;
+        align-items: auto;
+        height: $height;
+        width: $width;
+        grid-template-columns: repeat(3, 1fr 2fr) 1fr;
+        grid-template-rows: repeat(5, 3.46em);
+    }
+    #hexGrid .hexGrid .hex {
+        display: none;
+    }
+    #hexGrid .hexGrid .c-1,
+    #hexGrid .hexGrid .hex:nth-child(4),
+    #hexGrid .hexGrid .hex:nth-child(1) {
+        grid-column-start: 1;
+        grid-column-end: span 3;
+    }
+    #hexGrid .hexGrid .c-1.r-1,
+    #hexGrid .hexGrid .r-1.hex:nth-child(4),
+    #hexGrid .hexGrid .c-1.hex:nth-child(3),
+    #hexGrid .hexGrid .hex:nth-child(3):nth-child(4),
+    #hexGrid .hexGrid .c-1.hex:nth-child(2),
+    #hexGrid .hexGrid .hex:nth-child(2):nth-child(4),
+    #hexGrid .hexGrid .hex:nth-child(1) {
+        grid-row-start: 1;
+        grid-row-end: span 2;
+    }
+    #hexGrid .hexGrid .c-1.r-2,
+    #hexGrid .hexGrid .c-1.hex:nth-child(6),
+    #hexGrid .hexGrid .c-1.hex:nth-child(5),
+    #hexGrid .hexGrid .hex:nth-child(4),
+    #hexGrid .hexGrid .r-2.hex:nth-child(1),
+    #hexGrid .hexGrid .hex:nth-child(1):nth-child(6),
+    #hexGrid .hexGrid .hex:nth-child(1):nth-child(5) {
+        grid-row-start: 3;
+        grid-row-end: span 2;
+    }
+    #hexGrid .hexGrid .c-2,
+    #hexGrid .hexGrid .hex:nth-child(5),
+    #hexGrid .hexGrid .hex:nth-child(2) {
+        grid-column-start: 3;
+        grid-column-end: span 3;
+    }
+    #hexGrid .hexGrid .c-2.r-1,
+    #hexGrid .hexGrid .r-1.hex:nth-child(5),
+    #hexGrid .hexGrid .c-2.hex:nth-child(3),
+    #hexGrid .hexGrid .hex:nth-child(3):nth-child(5),
+    #hexGrid .hexGrid .hex:nth-child(2),
+    #hexGrid .hexGrid .c-2.hex:nth-child(1),
+    #hexGrid .hexGrid .hex:nth-child(1):nth-child(5) {
+        grid-row-start: 2;
+        grid-row-end: span 2;
+    }
+    #hexGrid .hexGrid .c-2.r-2,
+    #hexGrid .hexGrid .c-2.hex:nth-child(6),
+    #hexGrid .hexGrid .hex:nth-child(5),
+    #hexGrid .hexGrid .c-2.hex:nth-child(4),
+    #hexGrid .hexGrid .r-2.hex:nth-child(2),
+    #hexGrid .hexGrid .hex:nth-child(2):nth-child(6),
+    #hexGrid .hexGrid .hex:nth-child(2):nth-child(4) {
+        grid-row-start: 4;
+        grid-row-end: span 2;
+    }
+    #hexGrid .hexGrid .c-3,
+    #hexGrid .hexGrid .hex:nth-child(6),
+    #hexGrid .hexGrid .hex:nth-child(3) {
+        grid-column-start: 5;
+        grid-column-end: span 3;
+    }
+    #hexGrid .hexGrid .c-3.r-1,
+    #hexGrid .hexGrid .r-1.hex:nth-child(6),
+    #hexGrid .hexGrid .hex:nth-child(3),
+    #hexGrid .hexGrid .c-3.hex:nth-child(2),
+    #hexGrid .hexGrid .hex:nth-child(2):nth-child(6),
+    #hexGrid .hexGrid .c-3.hex:nth-child(1),
+    #hexGrid .hexGrid .hex:nth-child(1):nth-child(6) {
+        grid-row-start: 1;
+        grid-row-end: span 2;
+    }
+    #hexGrid .hexGrid .c-3.r-2,
+    #hexGrid .hexGrid .hex:nth-child(6),
+    #hexGrid .hexGrid .c-3.hex:nth-child(5),
+    #hexGrid .hexGrid .c-3.hex:nth-child(4),
+    #hexGrid .hexGrid .r-2.hex:nth-child(3),
+    #hexGrid .hexGrid .hex:nth-child(3):nth-child(5),
+    #hexGrid .hexGrid .hex:nth-child(3):nth-child(4) {
+        grid-row-start: 3;
+        grid-row-end: span 2;
+    }
+    #hexGrid .hexGrid .hex:nth-child(1) {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    #hexGrid .hexGrid .hex:nth-child(2) {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    #hexGrid .hexGrid .hex:nth-child(3) {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    #hexGrid .hexGrid .hex:nth-child(4) {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    #hexGrid .hexGrid .hex:nth-child(5) {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    #hexGrid .hexGrid .hex:nth-child(6) {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    #hexGrid .hexGrid .hex {
+        -webkit-clip-path: polygon(
+            75% 0,
+            100% 50%,
+            75% 100%,
+            25% 100%,
+            0 50%,
+            25% 0
+        );
+        clip-path: polygon(75% 0, 100% 50%, 75% 100%, 25% 100%, 0 50%, 25% 0);
+        background-color: #48a999;
+        background-size: cover;
+        margin: 0.4325em 0.5em;
+    }
+}
+
+.hexx2 {
+    #hexGrid {
+        display: flex;
+        flex-wrap: wrap;
+        width: 90%;
+        margin: 0 auto;
+        overflow: hidden;
+        font-family: "Raleway", sans-serif;
+        font-size: 15px;
+        list-style-type: none;
+    }
+
+    .hex {
+        position: relative;
+        visibility: hidden;
+        outline: 1px solid transparent; /* fix for jagged edges in FF on hover transition */
+    }
+    .hex::after {
+        content: "";
+        display: block;
+        padding-bottom: 86.602%; /* =  100 / tan(60) * 1.5 */
+    }
+    .hexIn {
+        position: absolute;
+        width: 96%;
+        padding-bottom: 110.851%; /* =  width / sin(60) */
+        margin: 0 2%;
+        overflow: hidden;
+        visibility: hidden;
+        outline: 1px solid transparent; /* fix for jagged edges in FF on hover transition */
+        -webkit-transform: rotate3d(0, 0, 1, -60deg) skewY(30deg);
+        -ms-transform: rotate3d(0, 0, 1, -60deg) skewY(30deg);
+        transform: rotate3d(0, 0, 1, -60deg) skewY(30deg);
+    }
+    .hexIn * {
+        position: absolute;
+        visibility: visible;
+        outline: 1px solid transparent; /* fix for jagged edges in FF on hover transition */
+    }
+    .hexLink {
+        display: block;
+        width: 100%;
+        height: 100%;
+        text-align: center;
+        color: #fff;
+        overflow: hidden;
+        -webkit-transform: skewY(-30deg) rotate3d(0, 0, 1, 60deg);
+        -ms-transform: skewY(-30deg) rotate3d(0, 0, 1, 60deg);
+        transform: skewY(-30deg) rotate3d(0, 0, 1, 60deg);
+    }
+
+    /*** HEX CONTENT **********************************************************************/
+    .hex img {
+        left: -100%;
+        right: -100%;
+        width: auto;
+        height: 100%;
+        margin: 0 auto;
+        -webkit-transform: rotate3d(0, 0, 0, 0deg);
+        -ms-transform: rotate3d(0, 0, 0, 0deg);
+        transform: rotate3d(0, 0, 0, 0deg);
+    }
+
+    .hex h1,
+    .hex p {
+        width: 100%;
+        padding: 5%;
+        box-sizing: border-box;
+        background-color: rgba(0, 128, 128, 0.8);
+        font-weight: 300;
+        -webkit-transition: -webkit-transform 0.2s ease-out,
+            opacity 0.3s ease-out;
+        transition: transform 0.2s ease-out, opacity 0.3s ease-out;
+    }
+    .hex h1 {
+        bottom: 50%;
+        padding-top: 50%;
+        font-size: 1.5em;
+        z-index: 1;
+        -webkit-transform: translate3d(0, -100%, 0);
+        -ms-transform: translate3d(0, -100%, 0);
+        transform: translate3d(0, -100%, 0);
+    }
+    .hex h1::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 45%;
+        width: 10%;
+        text-align: center;
+        border-bottom: 1px solid #fff;
+    }
+    .hex p {
+        top: 50%;
+        padding-bottom: 50%;
+        -webkit-transform: translate3d(0, 100%, 0);
+        -ms-transform: translate3d(0, 100%, 0);
+        transform: translate3d(0, 100%, 0);
+    }
+
+    /*** HOVER EFFECT  **********************************************************************/
+    .hexLink:hover h1,
+    .hexLink:focus h1,
+    .hexLink:hover p,
+    .hexLink:focus p {
+        -webkit-transform: translate3d(0, 0, 0);
+        -ms-transform: translate3d(0, 0, 0);
+        transform: translate3d(0, 0, 0);
+    }
+
+    /*** HEXAGON SIZING AND EVEN ROW INDENTATION *****************************************************************/
+    @media (min-width: 1201px) {
+        /* <- 5-4  hexagons per row */
+        #hexGrid {
+            padding-bottom: 4.4%;
+        }
+        .hex {
+            width: 20%; /* = 100 / 5 */
+        }
+        .hex:nth-child(9n + 6) {
+            /* first hexagon of even rows */
+            margin-left: 10%; /* = width of .hex / 2  to indent even rows */
+        }
+    }
+
+    @media (max-width: 1200px) and (min-width: 901px) {
+        /* <- 4-3  hexagons per row */
+        #hexGrid {
+            padding-bottom: 5.5%;
+        }
+        .hex {
+            width: 25%; /* = 100 / 4 */
+        }
+        .hex:nth-child(7n + 5) {
+            /* first hexagon of even rows */
+            margin-left: 12.5%; /* = width of .hex / 2  to indent even rows */
+        }
+    }
+
+    @media (max-width: 900px) and (min-width: 601px) {
+        /* <- 3-2  hexagons per row */
+        #hexGrid {
+            padding-bottom: 7.4%;
+        }
+        .hex {
+            width: 33.333%; /* = 100 / 3 */
+        }
+        .hex:nth-child(5n + 4) {
+            /* first hexagon of even rows */
+            margin-left: 16.666%; /* = width of .hex / 2  to indent even rows */
+        }
+    }
+
+    @media (max-width: 600px) {
+        /* <- 2-1  hexagons per row */
+        #hexGrid {
+            padding-bottom: 11.2%;
+        }
+        .hex {
+            width: 50%; /* = 100 / 3 */
+        }
+        .hex:nth-child(3n + 3) {
+            /* first hexagon of even rows */
+            margin-left: 25%; /* = width of .hex / 2  to indent even rows */
+        }
+    }
+
+    @media (max-width: 400px) {
+        #hexGrid {
+            font-size: 13px;
+        }
+    }
+    :root {
+        --Nhexa: 4;
+        --gap: 5px;
+        --size: calc(calc(100vw / var(--Nhexa)) - var(--gap));
+    }
+    @media only screen and (min-width: 1100px) {
+        :root {
+            --Nhexa: 6;
+        }
+    }
+    @media only screen and (max-width: 600px) {
+        :root {
+            --Nhexa: 2;
+        }
+    }
+}
+
+// [draggable] {
+//   -moz-user-select: none;
+//   -khtml-user-select: none;
+//   -webkit-user-select: none;
+//   user-select: none;
+//   -moz-user-drag: element;
+//   -webkit-user-drag: element;
+//   -khtml-user-drag: element;
+//   -webkit-user-drag: element;
+// }
+
+// svg {
+
+// }
+// svg g {
+//   fill: #3F51B5;
+//   fill-opacity: 0.6;
+// }
+// svg g:hover {
+//   fill-opacity: 1;
+// }
+// svg g:hover text {
+//   fill-opacity: 1;
+// }
+
+// svg g polygon {
+//   stroke: #3F51B5;
+//   stroke-width: 0.2;
+//   transition: fill-opacity .2s;
+// }
+// svg g text {
+//   font-size: 0.3em;
+//   fill: #FFFFFF;
+//   fill-opacity: 0.4;
+//   transition: fill-opacity .2s;
+// }
+// svg path {
+//   fill: none;
+//   stroke: hsl(60, 20%, 70%);
+//   stroke-width: 0.4em;
+//   stroke-opacity: 0.3;
+//   stroke-linecap: round;
+//   stroke-linejoin: round;
+// }

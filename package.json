@@ -1,19 +1,51 @@
 {
-  "name": "next-test",
-  "version": "0.1.0",
-  "private": true,
-  "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start",
-    "lint": "next lint"
-  },
-  "dependencies": {
-    "@next/font": "13.1.2",
-    "eslint": "8.32.0",
-    "eslint-config-next": "13.1.2",
-    "next": "13.1.2",
-    "react": "18.2.0",
-    "react-dom": "18.2.0"
-  }
+    "name": "next-matt-app",
+    "version": "0.1.0",
+    "private": true,
+    "scripts": {
+        "dev": "next dev -p 8080",
+        "build": "next build",
+        "start": "next start -p 8080",
+        "lint": "next lint",
+        "test": "jest",
+        "test:watch": "jest --watch"
+    },
+    "dependencies": {
+        "@apollo/client": "^3.9.10",
+        "@emotion/react": "^11.11.4",
+        "@emotion/styled": "^11.11.5",
+        "@gsap/react": "^2.1.1",
+        "@mui/icons-material": "^5.15.15",
+        "@mui/material": "^5.15.15",
+        "@reduxjs/toolkit": "^2.2.2",
+        "axios": "^1.6.8",
+        "bootstrap": "^5.3.3",
+        "cookies": "^0.9.1",
+        "graphql": "^16.8.1",
+        "gsap": "^3.12.5",
+        "js-cookie": "^3.0.5",
+        "next": "14.0.4",
+        "react": "^18",
+        "react-dom": "^18",
+        "react-helmet": "^6.1.0",
+        "react-markdown": "^8.0.7",
+        "react-redux": "^9.1.0",
+        "react-syntax-highlighter": "^15.5.0",
+        "react-transition-group": "^4.4.5"
+    },
+    "devDependencies": {
+        "@testing-library/dom": "^10.4.0",
+        "@testing-library/jest-dom": "^6.5.0",
+        "@testing-library/react": "^16.0.1",
+        "@types/jest": "^29.5.13",
+        "@types/node": "20.11.30",
+        "@types/react": "18.2.73",
+        "eslint": "^8",
+        "eslint-config-next": "14.0.4",
+        "jest": "^29.7.0",
+        "jest-environment-jsdom": "^29.7.0",
+        "mini-css-extract-plugin": "^2.8.1",
+        "sass": "^1.72.0",
+        "ts-jest": "^29.2.5"
+    }
 }
