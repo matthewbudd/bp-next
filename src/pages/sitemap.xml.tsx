@@ -1,37 +1,28 @@
-import blogs from "@/components/Drawer/page-list.json"
+import pages from "@/components/Drawer/page-list.json"
 
-function generateSiteMap(posts, host) {
-    if (host.includes("example.co.uk")) {
-        return `<?xml version="1.0" encoding="UTF-8"?>
-   <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-     <!--We manually set the two URLs we know already-->
+function generateSiteMap(pages, host) {
+    return `<?xml version="1.0" encoding="UTF-8"?>
+ <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+   <url>
+     <loc>${`${host}`}</loc>
+   </url>
+   ${
+       host.includes("example.co.uk")
+           ? pages
+                 .map((item) => {
+                     if (item.slug !== "/") {
+                         return `
      <url>
-       <loc>${`${host}`}</loc>
+         <loc>${`${host}${item.slug}`}</loc>
      </url>
-     ${posts
-         .map((item) => {
-             if (item.slug !== "/") {
-                 return `
-       <url>
-           <loc>${`${host}blog/${item.slug}`}</loc>
-       </url>
-     `
-             }
-         })
-         .join("")}
-   </urlset>
- `
-    } else {
-        return `<?xml version="1.0" encoding="UTF-8"?>
-    <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-      <!--We manually set the two URLs we know already-->
-      <url>
-        <loc>${`${host}`}</loc>
-      </url>
-     
-    </urlset>
-  `
-    }
+   `
+                     }
+                 })
+                 .join("")
+           : ""
+   }
+ </urlset>
+`
 }
 
 function SiteMap() {
@@ -45,7 +36,7 @@ export async function getServerSideProps(context) {
     }
     let url = new URL(`${protocol}${context.req.headers.host}`)
     // We generate the XML sitemap with the posts data
-    const sitemap = await generateSiteMap(blogs, url.toString())
+    const sitemap = await generateSiteMap(pages, url.toString())
 
     context.res.setHeader("Content-Type", "text/xml")
     // // we send the XML to the browser
