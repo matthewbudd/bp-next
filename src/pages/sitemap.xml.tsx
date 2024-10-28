@@ -1,6 +1,6 @@
 import pages from "@/components/Drawer/page-list.json"
 
-function generateSiteMap(pages, host) {
+function generateSiteMap(items, host) {
     return `<?xml version="1.0" encoding="UTF-8"?>
  <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
    <url>
@@ -8,7 +8,7 @@ function generateSiteMap(pages, host) {
    </url>
    ${
        host.includes("example.co.uk")
-           ? pages
+           ? items
                  .map((item) => {
                      if (item.slug !== "/") {
                          return `
