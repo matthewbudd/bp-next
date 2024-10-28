@@ -25,6 +25,13 @@ jobs:
           cache: npm
           cache-dependency-path: '**/package-lock.json'
 
+      - name: Copy file
+        run: |
+          echo "Copying file..."
+          cp data/info.example.json data/info.json
+          cp data/nav.example.json data/nav.json
+          cp .env.example .env
+
       - name: Install Dependencies
         id: npm-ci
         run: npm ci
