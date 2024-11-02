@@ -14,6 +14,7 @@ import {
     animFadeOutUp,
     // animFadeOutDown,
 } from "@/common/animations"
+import {Messages} from "@/components/Messaging"
 
 gsap.registerPlugin(useGSAP)
 const duration = 0.4
@@ -114,13 +115,17 @@ const Home = (props) => {
 
     return (
         globalState && (
-            <PageProvider pageTitle={process.env.APP_TITLE} description={"Meta description for app."}>
+            <PageProvider
+                pageTitle={process.env.APP_TITLE}
+                description={"Meta description for app."}
+            >
                 <div
                     className="selected homeme dark app"
                     id="home"
                     ref={container}
                     style={{height}}
                 >
+                    <Messages />
                     <div className="inner">
                         <div className="content-hold">
                             <div style={{opacity: 0}} className="content-hold">

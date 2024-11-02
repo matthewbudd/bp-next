@@ -22,6 +22,7 @@
         "bootstrap": "^5.3.3",
         "cookies": "^0.9.1",
         "graphql": "^16.8.1",
+        "graphql-ws": "^5.16.0",
         "gsap": "^3.12.5",
         "js-cookie": "^3.0.5",
         "next": "14.0.4",

@@ -317,6 +317,14 @@ $i: 30;
     $i: $i - 2;
 }
 
+.messages {
+    position: absolute;
+    color: white;
+    top: 5vh;
+    width: 100%;
+    text-align: center;
+}
+
 // progress::-moz-progress-bar, progress::-webkit-progress-value {
 //   background-image:
 // 	   -webkit-linear-gradient(-45deg,
