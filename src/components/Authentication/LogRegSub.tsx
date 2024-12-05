@@ -28,10 +28,10 @@ const LogRegSub = (props) => {
     const handleClose = () => setOpen(false)
 
     useEffect(() => {
-        if (user?.role == "subscriber") {
+        if (user?.roles?.includes("subscriber")) {
             setOpen(false)
         }
-    }, [user?.role])
+    }, [user?.roles])
 
     return (
         <>
@@ -45,9 +45,9 @@ const LogRegSub = (props) => {
                 }}
             >
                 {/* <LogoutIcon /> */}
-                {user?.role === null ? (
+                {user?.roles === null || user?.roles.includes("") ? (
                     <LoginIcon />
-                ) : ["subscriber"].includes(user?.role) ? (
+                ) : user?.roles?.includes("subscriber") ? (
                     <LogoutIcon />
                 ) : (
                     <LockOpenIcon />
@@ -60,9 +60,11 @@ const LogRegSub = (props) => {
                 aria-describedby="modal-modal-description"
             >
                 <Box sx={style}>
-                    {["subscriber", null].includes(user?.role) ? (
+                {/* {console.log(user?.roles)} */}
+                    {user?.roles &&
+                    user?.roles.some((item) => ["subscriber", ""].includes(item)) ? (
                         <>
-                            {user?.role === "subscriber" && (
+                            {user?.roles.includes("subscriber") && (
                                 <Box>
                                     <Button
                                         fullWidth

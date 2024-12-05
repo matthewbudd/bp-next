@@ -37,7 +37,7 @@ function a11yProps(index: number) {
 }
 const LogReg = (props) => {
     const {user} = props
-    const isAuthed = user.name !== null && user.role !== null
+    const isAuthed = user.name !== null && user.roles !== null
 
     const [value, setValue] = React.useState(0)
 

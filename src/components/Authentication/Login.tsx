@@ -78,7 +78,7 @@ const Login = () => {
                             jwt: currUser?.token,
                             user: {
                                 name: currUser?.user?.name,
-                                role: currUser?.user?.role,
+                                roles: currUser?.user?.roles,
                             },
                         }),
                     )
@@ -97,7 +97,7 @@ const Login = () => {
                 mt: 1,
                 display: "flex",
                 flexDirection: "column",
-                alignItems: "center",
+                alignItems: "center"
             }}
         >
             {/* <Avatar sx={{m: 1, bgcolor: "primary.light"}}>
@@ -115,6 +115,9 @@ const Login = () => {
                     autoFocus={pathname !== "/experience"}
                     value={name}
                     onChange={(e) => setName(e.target.value)}
+                    sx={{
+                        background:"#fffefe"
+                    }}
                 />
 
                 <TextField
@@ -128,6 +131,9 @@ const Login = () => {
                     value={password}
                     onChange={(e) => {
                         setPassword(e.target.value)
+                    }}
+                    sx={{
+                        background:"#fffefe"
                     }}
                 />
 

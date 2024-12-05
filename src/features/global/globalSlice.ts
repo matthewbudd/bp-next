@@ -4,22 +4,20 @@ import {getSite, isLocal} from "@/lib/utils"
 import nav from "../../../data/nav.json"
 import info from "../../../data/info.json"
 
-// Define a type for the slice state
+type Positions = {
+    [key: string]: string | number
+}
+// Define an interface for the slice state
 interface GlobalState {
     title?: string
     jwt?: string | undefined
-    user?: {name: string | null; role: string | null}
+    user?: {name: string | null; roles: string[] | null}
     nav?: object
     site?: any
     local?: boolean
     width?: number
     height?: number
-    navPos?: {
-        left: string | number
-        right: string | number
-        top: string | number
-        bottom: string | number
-    }
+    navPos?: Positions
     top?: string | number
     left?: string | number
     right?: string | number
@@ -29,7 +27,7 @@ interface GlobalState {
 const initialState: GlobalState = {
     title: info.title,
     jwt: undefined,
-    user: {name: null, role: null},
+    user: {name: null, roles: [""]},
     site: typeof window !== "undefined" && getSite(),
     local: typeof window !== "undefined" && isLocal(),
     nav,

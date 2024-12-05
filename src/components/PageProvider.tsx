@@ -33,7 +33,7 @@ const PageProvider = (props) => {
                             jwt: currUser.token,
                             user: {
                                 name: currUser.user.name,
-                                role: currUser.user.role,
+                                roles: currUser.user.roles,
                             },
                         }),
                     )

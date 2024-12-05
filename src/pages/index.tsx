@@ -4,13 +4,12 @@ import Cookies from "cookies"
 import {useAppSelector} from "@/lib/hooks"
 import {user} from "@/components/Authentication/Login"
 
-export const Main = dynamic(() => import("@/components/Home/Main"), {ssr: true})
-export const Web = dynamic(() => import("@/components/Home/Web"), {ssr: true})
+const Main = dynamic(() => import("@/components/Home/Main"), {ssr: true})
+const Web = dynamic(() => import("@/components/Home/Web"), {ssr: true})
 
 const Home = (props) => {
     const globalState = useAppSelector((state) => state.global)
     const {site} = globalState
-    console.log(props)
 
     return (
         <>
@@ -36,7 +35,7 @@ export async function getServerSideProps(props) {
         protocol = "https://"
     }
     const token = cookies.get("token") || null
-    const userObject = token ? await user(token) : {user: {name: null, role: null}}
+    const userObject = token ? await user(token) : {user: {name: null, roles: [""]}}
     const userData = userObject.user
     return {
         props: {
