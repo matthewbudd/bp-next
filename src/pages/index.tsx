@@ -4,12 +4,13 @@ import Cookies from "cookies"
 import {useAppSelector} from "@/lib/hooks"
 import {user} from "@/components/Authentication/Login"
 
-const Main = dynamic(() => import("@/components/Home/Main"), {ssr: true})
-const Web = dynamic(() => import("@/components/Home/Web"), {ssr: true})
+export const Main = dynamic(() => import("@/components/Home/Main"), {ssr: true})
+export const Web = dynamic(() => import("@/components/Home/Web"), {ssr: true})
 
 const Home = (props) => {
     const globalState = useAppSelector((state) => state.global)
     const {site} = globalState
+    console.log(props)
 
     return (
         <>

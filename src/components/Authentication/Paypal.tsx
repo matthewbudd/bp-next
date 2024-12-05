@@ -64,33 +64,6 @@ export default function Paypal(props) {
                 onApprove: async (data, actions) => {
                     const order = await actions.order.capture()
                     console.info(order)
-                    //TODO: Add subscriptions after successful purchase
-
-                    /*
-          return fetch(`${BASE_URL}/api/v1/authentication/subscribe`, {
-            method: "POST",
-            headers: {
-              "Content-Type": "application/json",
-            },
-            body: JSON.stringify({
-              token: currState.global.jwt,
-              roles:userRole,
-              order,
-            }),
-          })
-            .then(res => {
-              if (res.ok) {
-                let data = res.json()
-                console.log(data)
-                localStorage.setItem("x-access-token", data.token)
-                localStorage.setItem("x-access-token-expiration", Date.now() + 2 * 60 * 60 * 1000)
-                dispatch(loadGlobal({ jwt: data.token, user: { name: data.user.name, roles: data.user.roles } }))
-                return res.json()
-              }
-              return res.json().then(json => Promise.reject(json))
-            })
-            .catch(err => alert(err))
-*/
 
                     return axios
                         .post(

@@ -31,7 +31,7 @@ const LogRegSub = (props) => {
         if (user?.roles?.includes("subscriber")) {
             setOpen(false)
         }
-    }, [user?.roles])
+    }, [user?.role])
 
     return (
         <>
@@ -60,7 +60,6 @@ const LogRegSub = (props) => {
                 aria-describedby="modal-modal-description"
             >
                 <Box sx={style}>
-                {/* {console.log(user?.roles)} */}
                     {user?.roles &&
                     user?.roles.some((item) => ["subscriber", ""].includes(item)) ? (
                         <>
