@@ -7,8 +7,8 @@ import "@testing-library/jest-dom"
 import React from "react"
 import {makeStore as store} from "../lib/storePages"
 import {Provider} from "react-redux"
-import {Main} from "@/pages"
-import App from "@/pages/_app"
+import {Main} from "@/_pages"
+import App from "@/_pages/_app"
 
 // Mock useRouter:
 jest.mock("next/navigation", () => ({
