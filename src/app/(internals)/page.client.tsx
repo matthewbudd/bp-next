@@ -10,8 +10,8 @@ export default function HomePage(props) {
     const [siteState, setSite] = useState(null)
     const globalState = useAppSelector((state) => state.global)
     const {site} = globalState
-    console.log(props)
-    console.log(site)
+    // console.log(props)
+    // console.log(site)
 
     useEffect(() => {
         setSite(site)

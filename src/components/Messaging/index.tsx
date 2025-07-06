@@ -1,7 +1,7 @@
 import React from "react"
 import {useSubscription, gql} from "@apollo/client"
 
-const INC_SUBSCRIPTION = gql`
+export const INC_SUBSCRIPTION = gql`
     subscription Subscription {
         newMessage
     }
